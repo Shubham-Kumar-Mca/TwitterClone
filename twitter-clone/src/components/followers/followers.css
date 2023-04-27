@@ -1,0 +1,59 @@
+.follow_container{
+    background-color:#add8e6;
+    width: 50%;
+}
+ h3{
+    position: relative;
+    right: 30%;
+    top: 5%;
+    
+ }
+
+
+.user-container {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    position: relative;
+    padding: 5px;
+  }
+  
+  .profile-pic {
+    margin-right: 10px;
+    width: 20%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-info h4, .user-info p {
+    margin: 0;
+  }
+  
+  
+  .user-info button {
+    
+    position: absolute;
+    left: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #ffff;
+    
+  }
+  
+  .user-info p {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  
