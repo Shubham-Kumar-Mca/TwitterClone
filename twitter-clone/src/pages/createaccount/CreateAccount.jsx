@@ -3,7 +3,7 @@ import { RxCross2 } from "react-icons/rx";
 import TextField from '@mui/material/TextField'
 import "./createAccount.css";
 import { Button } from '@mui/material';
-import DOB from '../../components/dob/DOB';
+import DOB from '../../components/dob/dob/DOB';
 
 const initailState = {
     isAuth: false,
