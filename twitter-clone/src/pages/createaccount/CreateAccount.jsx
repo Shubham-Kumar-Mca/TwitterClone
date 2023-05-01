@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import { RxCross2 } from "react-icons/rx";
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField'
-import "./createAccount.css";
+import axios from 'axios';
 import { Button } from '@mui/material';
-import DOB from '../../components/dob/dob/DOB';
+import { RxCross2 } from "react-icons/rx";
+import { AuthContext } from '../../context/AuthContextProvider';
+import DOB from '../../components/dob/DOB';
+import "./createAccount.css";
 
 const initailState = {
     isAuth: false,
@@ -14,14 +18,15 @@ const initailState = {
         month: "",
         year: "",
     },
+    data: []
 }
 
 const CreateAccount = () => {
     const [formData, setFormData] = useState(initailState);
     const [errors, setErrors] = useState({ userName: "", userPhone: "", dob: "" });
-
-    const userDataFromeLS = JSON.parse(localStorage.getItem("usersData")) || [];
-
+    const navigate = useNavigate()
+    const { handelUserData } = useContext(AuthContext)
+    const { twwetsData } = useSelector(state => state.tweet)
 
 
     const validateName = () => {
@@ -94,18 +99,31 @@ const CreateAccount = () => {
     };
 
 
+    // Generate Person Image Automatically
+    const generateUserImage = async () => {
+        const response = await axios.get("https://randomuser.me/api/");
+        const imageUrl = response.data.results[0].picture.large;
+        return imageUrl
+    }
+
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         // validate all form fields before submitting
         validateName();
         validateMobile();
         validateDOB();
-        
-        // if there are no errors, submit the form data
-        if ((!errors.userName && formData.userName) && (!errors.userPhone && formData.userPhone) && (!errors.dob && formData.dob)) {
-            localStorage.setItem("usersData", JSON.stringify([...userDataFromeLS, formData]))
-            setFormData(initailState)
-        }
+        generateUserImage().then(res => {
+            // if there are no errors, submit the form data
+            if ((!errors.userName && formData.userName) && (!errors.userPhone && formData.userPhone) && (!errors.dob && formData.dob)) {
+                const rendomNumber = Math.floor(Math.random() * 9000) + 1000
+                const userid = formData.userName.split(" ")[0] + rendomNumber
+                handelUserData({ ...formData, AvatarImage: res, data : twwetsData, username :  userid})
+                setFormData(initailState);
+                navigate("/sign-in")
+            }
+        })
     };
 
 
