@@ -4,7 +4,6 @@ import { AuthContext } from '../context/AuthContextProvider';
 
 const PrivateRoutes = ({children}) => {
     const { userData } = useContext(AuthContext);
-    // const currentUser = userData.find(element => element.isAuth === true )
     const filndCurrentUser = userData.find(user=>user.isAuth)
 
     if(!filndCurrentUser?.isAuth){
