@@ -1,15 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
-import "./feed.css";
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../context/AuthContextProvider';
 import TweetBox from '../tweetBox/TweetBox';
 import Post from '../post/Post';
-import { AuthContext } from '../../context/AuthContextProvider';
+import "./feed.css";
+
 
 const Feed = () => {
-  const { userData } = useContext(AuthContext)
-
-
+  const { userData } = useContext(AuthContext);
   const findCurrentUser = userData.find(user => user.isAuth);
-  const [updatedTweets, setUpdatedTweets] = useState(findCurrentUser.data)
+  const [updatedTweets, setUpdatedTweets] = useState(findCurrentUser.data);
 
 
 
