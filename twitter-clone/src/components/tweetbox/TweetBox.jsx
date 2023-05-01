@@ -51,9 +51,9 @@ const TweetBox = () => {
         "userImage": findCurrentUser.AvatarImage,
         "username" : findCurrentUser.username
       },
-      "likeCount": 576,
-      "commentCount": 577,
-      "reTweetsCount": 174,
+      "likeCount": Math.floor(Math.random() * 900) + 100 ,
+      "commentCount": Math.floor(Math.random() * 900) + 100,
+      "reTweetsCount": Math.floor(Math.random() * 900) + 100,
       "isLiked": false,
       "isVarified": false,
       "emoji" : selectedEmoji
