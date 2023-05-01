@@ -49,10 +49,7 @@ export default function SignIn() {
             const filndCurrentUser = userData.find(user => user.userPhone === mobileNumber)
             // const updatedUser = {...filndCurrentUser, isAuth : true}
             if (!filndCurrentUser) {
-                setErrors((prevErrors) => ({
-                    ...prevErrors,
-                    userPhone: "Mobile number do not match. Please sign up first!",
-                }));
+                alert("Mobile number do not match. Please sign up first!")
                 navigate("/sign-up");
             } else {
                 const updatedUser = userData.map(user => {
