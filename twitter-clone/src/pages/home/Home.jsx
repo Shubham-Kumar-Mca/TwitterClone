@@ -1,5 +1,7 @@
 import React from 'react'
 import Sidebar from '../../components/sidebar/Sidebar'
+import Followers from '../../components/followers/Followers'
+import Search from '../../components/search/Search'
 import Feed from '../../components/feed/Feed'
 import "./home.css"
 
@@ -11,6 +13,13 @@ const Home = () => {
 
       {/* Feed */}
       <Feed />
+
+
+      {/* Right Section */}
+      <div>
+        <Search />
+        <Followers />
+      </div>
     </section>
   )
 }
