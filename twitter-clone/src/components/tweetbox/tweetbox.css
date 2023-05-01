@@ -24,7 +24,7 @@ textarea::-webkit-scrollbar{
 }
 
 .tweetBox__tweetBtn{
-    background-color: var(--twitter-color) !important;
+    background-color: #1d9bf0 !important;
     border: none !important;
     color: white !important;
     font-weight: 900 !important;
@@ -32,6 +32,7 @@ textarea::-webkit-scrollbar{
     border-radius: 30px !important;
     height: 40px !important;
     padding: 0 30px !important;
+    cursor: pointer;
 }
 
 .tweetBox__imageInput{
@@ -120,4 +121,16 @@ textarea::-webkit-scrollbar{
     padding-left: 20px;
     margin-bottom: 0.5rem;
     font-size: 2rem;
+}
+
+.tweetBox__tweet__Dis__Btn{
+    background-color: #8ecdf7 !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 30px !important;
+    height: 40px !important;
+    padding: 0 30px !important;
+    cursor: pointer;
 }

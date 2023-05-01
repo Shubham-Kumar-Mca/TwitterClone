@@ -38,6 +38,7 @@ const TweetBox = () => {
     setTweet(e.target.value)
   }
 
+  
 
   const handelPostTweet = () => {
   
@@ -63,16 +64,18 @@ const TweetBox = () => {
     setTweet("")
     setImage("")
     setSelectedEmoji([])
-    
   }
+
+
   const handelIconClick = (title) => {
     if (title === "Media") {
       inputRef.current.click();
     } else if (title === "Emoji") {
-      setShowEmojiPicker(true);
+      setShowEmojiPicker(!showEmojiPicker);
     }
 
   }
+
 
   // Function to pick image
   const handleFileInputChange = (e) => {
@@ -81,13 +84,15 @@ const TweetBox = () => {
     reader.readAsDataURL(file);
     reader.onload = () => {
       const selectedImage = reader.result
-      setImage(selectedImage)
+      setImage(selectedImage);
     }
   }
 
   const handleEmojiClick = (event) => {
     setSelectedEmoji([...selectedEmoji, event.emoji]);
   };
+
+  const isDisabled = tweet.trim() === "" && image.trim() === "" && selectedEmoji.length < 1;
 
 
 
@@ -129,7 +134,7 @@ const TweetBox = () => {
                 <div key={menu.id} title={menu.title} onClick={() => handelIconClick(menu.title)}>{menu.icon}</div>
               ))}
             </div>
-            <Button className='tweetBox__tweetBtn' onClick={handelPostTweet}>Tweet</Button>
+            <button className={isDisabled ? "tweetBox__tweet__Dis__Btn" : 'tweetBox__tweetBtn'} disabled = {isDisabled} onClick={handelPostTweet}>Tweet</button>
           </div>
 
         </div>
