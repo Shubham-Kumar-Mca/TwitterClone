@@ -1,0 +1,29 @@
+.container_search {
+    margin: 10px 10px;
+    width: 100%;
+    position: relative;
+   
+  }
+  
+  .Input_search {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #cccc;
+    text-shadow: none;
+    text-decoration: none;
+    padding: 10px 10px 10px 10px; 
+  }
+  
+  .icon_search {
+    position: absolute;
+    top: 25%;
+    left: 170px; 
+    height: 20px;
+    width: 20px; 
+  }
+  
+  .icon_search:focus {
+    border: none;
+  }
+  
