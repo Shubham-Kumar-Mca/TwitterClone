@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContextProvider';
 
 const PrivateRoutes = ({children}) => {
-    const isAuth = true
+    const { userData } = useContext(AuthContext);
+    // const currentUser = userData.find(element => element.isAuth === true )
+    const filndCurrentUser = userData.find(user=>user.isAuth)
 
-    if(!isAuth){
+    if(!filndCurrentUser?.isAuth){
         return <Navigate to="/sign-in"/>
     }
     return children
