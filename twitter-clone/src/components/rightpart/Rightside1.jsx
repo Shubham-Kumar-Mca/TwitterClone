@@ -22,7 +22,7 @@ export const Rightside1 = () => {
         <div className="grey-text">2,806 Tweets</div>
         <button className="show-more-btn">Show more</button>
       </div>
-    
+    </div>
     
   )
 }
