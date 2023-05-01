@@ -16,7 +16,7 @@ const Home = () => {
 
 
       {/* Right Section */}
-      <div>
+      <div className='right__section'>
         <Search />
         <Followers />
       </div>

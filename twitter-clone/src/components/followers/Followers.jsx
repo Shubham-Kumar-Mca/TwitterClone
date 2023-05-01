@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./followers.css";
-import { Avatar} from "@mui/material";
+import { Avatar } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
 
@@ -24,26 +24,26 @@ const Followers = () => {
       id: 3,
       name: "Narendra modi",
       profilePic: "https://www.pmindia.gov.in/wp-content/themes/pmindia2015/images/know-the-pm.jpg",
-      username :'narendramodi@gmail.com',
+      username: 'narendramodi@gmail.com',
       followed: false,
     },
 
     {
-        id: 4,
-        name: "Amitabh bachchan",
-        profilePic: "https://resize.indiatvnews.com/en/resize/newbucket/930_-/2023/04/amitabh-bachchan-2-1682335127.jpg",
-        username: "Amitabh@gmail.com",
-        followed: false,
-      },
+      id: 4,
+      name: "Amitabh bachchan",
+      profilePic: "https://resize.indiatvnews.com/en/resize/newbucket/930_-/2023/04/amitabh-bachchan-2-1682335127.jpg",
+      username: "Amitabh@gmail.com",
+      followed: false,
+    },
 
-      
+
     {
-        id: 5,
-        name: "virat kohli",
-        profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYc0adLCo9HOvc4425Lu9AsdPD9nA8-KHv0aIwWpOGPzOfOzLhF0tnsbn5RhAn2yBhGEg&usqp=CAU",
-        username: "viratkohli@gmail.com",
-        followed: false,
-      },
+      id: 5,
+      name: "virat kohli",
+      profilePic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYc0adLCo9HOvc4425Lu9AsdPD9nA8-KHv0aIwWpOGPzOfOzLhF0tnsbn5RhAn2yBhGEg&usqp=CAU",
+      username: "viratkohli@gmail.com",
+      followed: false,
+    },
   ]);
   const [showMore, setShowMore] = useState(false);
   const usersToShow = showMore ? suggestedUsers : suggestedUsers.slice(0, 3);
@@ -66,31 +66,31 @@ const Followers = () => {
       {usersToShow.map((user) => (
         <div key={user.id} className="user-container">
           <Avatar src={user.profilePic} alt={user.name}
-         />
+          />
           <div className="user-info">
             <h3>{user.name} {" "}
-            <VerifiedIcon style={{ color: "#1D9BF0", width: "1.2rem",marginTop:"10px" }} />
-               
+              <VerifiedIcon style={{ color: "#1D9BF0", width: "1.2rem", marginTop: "10px" }} />
+
             </h3>
-           
+
             <p>{user.username}</p>
 
           </div>
-         
-         <button className="btn_follow"
-           onClick={() => handleFollowClick(user.id)}>
-              {user.followed ?   "Followed" : "Follow"}
-            </button>
-         
 
-          
+          <button className="btn_follow"
+            onClick={() => handleFollowClick(user.id)}>
+            {user.followed ? "Followed" : "Follow"}
+          </button>
 
-           
+
+
+
+
         </div>
       ))}
       {suggestedUsers.length > 2 && (
         <a href='#' onClick={handleShowMoreClick}
-        className="btn_show">
+          className="btn_show">
           {showMore ? "Show Less" : "Show More"}
         </a>
       )}
