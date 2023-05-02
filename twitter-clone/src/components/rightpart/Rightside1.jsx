@@ -1,5 +1,8 @@
 import React from 'react'
 import "./Rightside1.css";
+
+
+
 export const Rightside1 = () => {
   return (
    
