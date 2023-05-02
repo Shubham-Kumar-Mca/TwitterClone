@@ -87,6 +87,7 @@ const TweetBox = () => {
       setImage(selectedImage);
     }
   }
+  console.log("image", image)
 
   const handleEmojiClick = (event) => {
     setSelectedEmoji([...selectedEmoji, event.emoji]);
