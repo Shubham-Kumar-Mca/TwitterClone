@@ -27,8 +27,7 @@ This is a Twitter clone application that aims to replicate the basic functionali
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/Shubham-Kumar-Mca/TwitterClone.git`
-2. Change into the project directory: `cd twitter-clone`
-3. Install the dependencies: `npm install`
+2. Install the dependencies: `npm install`
 
 ## Usage
 
