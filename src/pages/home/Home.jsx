@@ -4,7 +4,7 @@ import Followers from '../../components/followers/Followers'
 import Search from '../../components/search/Search'
 import Feed from '../../components/feed/Feed';
 import "./home.css"
-import { Rightside1 } from '../../components/Rightpart/Rightside1';
+import { Rightside1 } from '../../components/rightpart/Rightside1';
 
 const Home = () => {
   const [scrollTop, setScrollTop] = useState(0);

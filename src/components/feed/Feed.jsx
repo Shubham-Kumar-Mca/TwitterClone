@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthContextProvider';
-import TweetBox from '../tweetBox/TweetBox';
+import TweetBox from '../tweetbox/TweetBox';
 import Post from '../post/Post';
 import "./feed.css";
 
